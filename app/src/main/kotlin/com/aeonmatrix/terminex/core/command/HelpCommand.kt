@@ -1,7 +1,7 @@
 package com.aeonmatrix.terminex.core.command
 
 
-class HelpCommand : Command {
+class HelpCommand:Command {
 
 
     override fun execute(){
@@ -12,6 +12,7 @@ class HelpCommand : Command {
         println("  version")
         println("  status")
         println("  intelligence")
+        println("  runtime")
 
     }
 

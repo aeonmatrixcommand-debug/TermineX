@@ -10,7 +10,7 @@ class CommandRouter {
     fun route(args:Array<String>):Command {
 
 
-        return when(args.firstOrNull()){
+        return when(args.firstOrNull()) {
 
 
             "help" ->
@@ -27,6 +27,10 @@ class CommandRouter {
 
             "intelligence" ->
                 IntelligenceCommand()
+
+
+            "runtime" ->
+                RuntimeCommand()
 
 
             else ->
