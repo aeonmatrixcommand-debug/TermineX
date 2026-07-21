@@ -23,6 +23,9 @@ class CommandRouter {
             "agent" ->
                 AgentCommand()
 
+            "collaboration" ->
+                CollaborationCommand()
+
             "enterprise" ->
                 EnterpriseAICommand()
 

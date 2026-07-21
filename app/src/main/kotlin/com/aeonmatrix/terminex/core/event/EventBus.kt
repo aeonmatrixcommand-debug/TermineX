@@ -3,8 +3,14 @@ package com.aeonmatrix.terminex.core.event
 
 class EventBus {
 
+
+    private val events =
+        mutableListOf<Event>()
+
+
     private val listeners =
         mutableListOf<EventListener>()
+
 
 
     fun register(
@@ -16,14 +22,34 @@ class EventBus {
     }
 
 
+
     fun publish(
         event:Event
     ){
 
+        events.add(event)
+
+
+        println(
+            "Event Published : ${event.type}"
+        )
+
+
         listeners.forEach {
+
             it.onEvent(event)
+
         }
 
     }
+
+
+
+    fun history():List<Event>{
+
+        return events
+
+    }
+
 
 }
