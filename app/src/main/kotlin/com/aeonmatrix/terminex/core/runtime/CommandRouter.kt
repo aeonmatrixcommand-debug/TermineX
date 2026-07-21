@@ -35,6 +35,9 @@ class CommandRouter {
             "event" ->
                 EventCommand()
 
+            "ai" ->
+                AICommand()
+
 
             else ->
                 HelpCommand()
