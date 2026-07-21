@@ -1,21 +1,29 @@
 package com.aeonmatrix.terminex.core.event
 
+
 class EventBus {
 
-    private val events = mutableListOf<Event>()
+    private val listeners =
+        mutableListOf<EventListener>()
 
 
-    fun publish(event: Event) {
+    fun register(
+        listener:EventListener
+    ){
 
-        events.add(event)
+        listeners.add(listener)
 
-        println(
-            "Event published: ${event.name}"
-        )
     }
 
 
-    fun history(): List<Event> {
-        return events
+    fun publish(
+        event:Event
+    ){
+
+        listeners.forEach {
+            it.onEvent(event)
+        }
+
     }
+
 }

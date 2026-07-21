@@ -32,6 +32,9 @@ class CommandRouter {
             "runtime" ->
                 RuntimeCommand()
 
+            "event" ->
+                EventCommand()
+
 
             else ->
                 HelpCommand()
