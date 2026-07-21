@@ -1,23 +1,17 @@
 package com.aeonmatrix.terminex.core.command
 
+import com.aeonmatrix.terminex.core.intelligence.*
 
-import com.aeonmatrix.terminex.core.intelligence.IntelligenceEngine
-
-
-class IntelligenceCommand : Command {
-
+class IntelligenceCommand:Command {
 
     override fun execute(){
 
-        val engine =
+        val result =
             IntelligenceEngine()
+                .analyze()
 
-
-        engine.status()
-
-        engine.analyze(
-            "system-check"
-        )
+        println("Decision : ${result.action}")
+        println("Confidence : ${result.confidence}")
 
     }
 
