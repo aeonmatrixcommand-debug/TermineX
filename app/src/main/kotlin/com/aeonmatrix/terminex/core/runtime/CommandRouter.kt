@@ -20,6 +20,9 @@ class CommandRouter {
             "memory" ->
                 MemoryCommand()
 
+            "enterprise" ->
+                EnterpriseAICommand()
+
             else ->
                 HelpCommand()
         }
