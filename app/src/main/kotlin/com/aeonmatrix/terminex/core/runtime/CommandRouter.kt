@@ -20,6 +20,9 @@ class CommandRouter {
             "memory" ->
                 MemoryCommand()
 
+            "agent" ->
+                AgentCommand()
+
             "enterprise" ->
                 EnterpriseAICommand()
 
