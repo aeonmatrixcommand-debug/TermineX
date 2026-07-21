@@ -1,36 +1,12 @@
 package com.aeonmatrix.terminex.core.runtime
 
-
 import com.aeonmatrix.terminex.core.command.*
-
 
 class CommandRouter {
 
+    fun route(command:String): Command {
 
-    fun route(args:Array<String>):Command {
-
-
-        return when(args.firstOrNull()) {
-
-
-            "help" ->
-                HelpCommand()
-
-
-            "version" ->
-                VersionCommand()
-
-
-            "status" ->
-                StatusCommand()
-
-
-            "intelligence" ->
-                IntelligenceCommand()
-
-
-            "runtime" ->
-                RuntimeCommand()
+        return when(command) {
 
             "event" ->
                 EventCommand()
@@ -38,12 +14,15 @@ class CommandRouter {
             "ai" ->
                 AICommand()
 
+            "governance" ->
+                GovernanceCommand()
+
+            "memory" ->
+                MemoryCommand()
 
             else ->
                 HelpCommand()
-
         }
-
     }
 
 }
