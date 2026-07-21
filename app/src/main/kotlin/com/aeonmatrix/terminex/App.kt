@@ -1,26 +1,11 @@
 package com.aeonmatrix.terminex
 
+import com.aeonmatrix.terminex.core.runtime.CommandRouter
+
 fun main(args: Array<String>) {
-    when (args.firstOrNull()) {
-        "help" -> {
-            println("TermineX CLI")
-            println("Commands:")
-            println("  help")
-            println("  version")
-            println("  status")
-        }
 
-        "version" -> {
-            println("TermineX v0.1.0")
-        }
+    val command = CommandRouter()
+        .route(args)
 
-        "status" -> {
-            println("Status : OK")
-        }
-
-        else -> {
-            println("Welcome to TermineX")
-            println("Run: ./gradlew run --args=\"help\"")
-        }
-    }
+    command.execute()
 }
